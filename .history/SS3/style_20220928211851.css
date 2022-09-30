@@ -1,0 +1,22 @@
+/* selector  */
+
+/* Chọn theo tên thẻ */
+p {
+    color: red;
+    background-color: black;
+}
+
+/* Chọn theo class */
+.class-1 {
+    color: green;
+    background-color: black;
+}
+
+.big-font-size {
+    font-size: 50px;
+}
+
+#id-1 {
+    color: blue;
+    background-color: black;
+}

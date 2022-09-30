@@ -1,0 +1,13 @@
+/* selector  */
+
+/* Chọn theo tên thẻ */
+p {
+    color: red;
+    background-color: black;
+}
+
+/* Chọn theo class */
+.class-1 {
+    color: red;
+    background-color: black;
+}
