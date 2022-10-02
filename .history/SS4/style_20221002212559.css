@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 216px;
+    height: 253px;
+    /* background-color: black; */
+    margin: 60px auto;
+    background-image: url("oYiTqum.jpg")
+}

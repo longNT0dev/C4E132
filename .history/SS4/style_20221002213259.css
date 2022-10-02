@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 216px;
+    height: 253px;
+    margin: 60px auto;
+    background-image: url("oYiTqum.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+}

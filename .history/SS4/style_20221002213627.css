@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 216px;
+    height: 253px;
+    margin: 50px auto;
+    background-image: url("oYiTqum.jpg");
+    background-position: center;
+    background-size: cover;
+    border-radius: 27px;
+}
+
+/* position
+
+    relative: Dịch chuyển khối so với vị trí ban đầu 
+    absolute: Dịch chuyển khối so với góc trên bên trái của cha hoặc của trình duyệt 
+     
+    fixed
+    sticky  
+*/
+    /* top left right bottom  */
