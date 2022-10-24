@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Bài tập về mảng
+      // 1. Khai báo 1 mảng gồm các số bất kỳ.
+      // Tính tích của các phần tử trong mảng đó.
+      // Tìm số nhỏ nhất mà chia hết cho 2 trong mảng.
+      // Tìm số lớn nhất mà chia hết cho 3 trong mảng.
+      // Tính giá trị trung bình của mảng.
+      // Lọc ra các số nguyên tố trong mảng.
+      // Kiểm tra xem trong mảng có số nhỏ hơn 10 hay không.
+      // Kiểm tra xem tất cả phần tử trong mảng có lớn hơn 20 không.
+      // Nhập vào số n cho đến khi n là 1 số trong mảng s.
+
+      let numbers = [1, 7, 4, -5, 7, 2, 5, 9, 1, 3, -2];
+
+      //   let result = 1;
+
+      // Cách 1
+      //   result = result * numbers[0] * numbers[1] * numbers[2] * numbers[3] * numbers[4] * numbers[5] * numbers[6] * numbers[7] * numbers[8] * numbers[9] * numbers[10];
+
+      // Cách 2
+      //   for (let i = 0; i < numbers.length; i++) {
+      //     result = result * numbers[i];
+      //   }
+
+      // 2
+      // Sắp xếp lại mảng tăng dần
+      // Duyệt mảng bằng for từ vị trí 0 nếu có số chia hết cho 2 thì break
+
+      //   let min = numbers[0];
+      //   for (let i = 1; i < numbers.length; i++) {
+      //     if (numbers[i] % 2 == 0 && numbers[i] < min) {
+      //       min = numbers[i];
+      //     }
+      //   }
+
+      //   console.log(min);
+      // Các phương thức cần tìm hiểu: filter, find ,includes, indexOf, isArray, join, map, slice, splice
+      // pop, push ,shift, unshift
+
+      // Bài tập về object
+      let information = {
+        // key1: "value1",
+        // key2: "value2",
+        name: "Christiano Ronaldo",
+        age: 37,
+        nationality: "Bồ Đào Nha",
+      };
+
+      let choice = prompt("Enter your choice (Y/N/U/D)");
+
+      if (choice == "Y") {
+        // Hỏi nhập thông tin gì và giá trị cụ thể
+        let key = prompt("Enter a field");
+        let value = prompt("Enter value for field");
+
+        information[key] = value;
+      } else if (choice == "N") {
+        console.log("Guts bai");
+      } else if (choice == "U") {
+        information[prompt("Enter a field")] = prompt("Enter value for field");
+      } else if (choice == "D") {
+        delete information[prompt("Enter a field you want to delete")];
+      } else {
+        console.log("Chịu");
+      }
+
+      console.log(information);
+
+      // Các phương thức cần tìm hiểu: keys, values, assign
+    </script>
+  </body>
+</html>

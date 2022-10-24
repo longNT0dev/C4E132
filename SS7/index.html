@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+            1. 
+              // Cho tình huống sau, hãy khai báo các biến và gán các giá trị phù hợp sau đó tính toán và in ra màn hình console
+              // _ Một sinh viên tên Nguyễn Văn A đi thuê nhà tại Phương Mai. Số tiền 1 tháng của sinh viên này có thể tiêu là 10000000 (xin thêm là ăn đấm đấy 😥😥). Giá tiền phòng 1 tháng là 2000000 và phải đóng tiền nhà 3 tháng/ lần.
+              // _ Sau khi đóng tiền phòng và ở 15 ngày, sinh viên thấy hơi xa chỗ làm và quyết định chuyển tới Cổ Nhuế. Hãy tính số tiền sinh viên còn lại sau khi chuyển đi biết tiền vận chuyển đồ là 300000 (coi như tiền phòng 1 ngày sẽ bằng giá tiền 1 tháng / số ngày trong tháng và 1 tháng có 30 ngày). Số tiền phòng 1 ngày sẽ được làm tròn xuống (ví dụ 250300 -> 250000)
+              // _ Hãy tính toán các giá trị cần thiết và in ra console thông tin sinh viên (tên, địa chỉ trước và sau khi chuyển) và số tiền sinh viên có lúc đầu, sau khi trả tiền phòng và sau khi chuyển tới nơi ở mới
+              // * Phỏng trên câu chuyện có thật tuy nhiên các con số và địa chỉ đã được thay đổi
+              
+            //   const old_address = "" // snakeCase
+            // camelCase
+              const hisName = "Nguyễn Văn A"
+              const balance = 10000000
+              const rentPricePerMonth = 2000000
+              const pricePerDay = rentPricePerMonth / 30
+              const deliveryPrice = 300000
+              let address = "Phương Mai" 
+
+              // Thông tin sinh viên ban đầu 
+              console.log(`
+                Họ và tên: ${hisName},
+                Địa chỉ trước khi chuyển: ${address},
+                Số tiền ban đầu: ${balance}
+              `)
+
+              // Thông tin sinh viên sau khi trả tiền phòng 
+              console.log(`
+                Họ và tên: ${hisName},
+                Địa chỉ trước khi chuyển: ${address},
+                Số tiền sau khi thanh toán tiền phòng: ${balance - pricePerDay * 15}
+              `)
+
+              // Thông tin sinh viên sau khi chuyển trọ mới
+              address = "Cổ Nhuế"
+              console.log(`
+                Họ và tên: ${hisName},
+                Địa chỉ sau khi chuyển: ${address},
+                Số tiền sau khi chuyển nhà: ${balance - pricePerDay * 15 - deliveryPrice}
+              `)
+
+
+            2.
+                let age = 25, isMarried = false, isRich = true
+
+              
+                // age > 25 && isMarried && isRich → ?
+
+                console.log(age > 25 && isMarried && isRich)
+                // false && false && true -> false
+                // (age <= 25 || isMarried) && isRich → ?
+                console.log((age <= 25 || isMarried) && isRich)
+                // true || false && true -> true && true -> true
+                // (age > 10 || isRich) && isMarried → ?
+                console.log((age > 10 || isRich) && isMarried)
+                // (true || true) && false -> true && false -> false
+                // !(age >= 15 && isMarried) && isRich → ?
+                console.log(!(age >= 15 && isMarried) && isRich)
+                // !(true && false) && true -> !false && true -> true && true -> true
+                // !(age <= 20) || !(isMarried && isRich) → ?
+                console.log(!(age <= 20) || !(isMarried && isRich))
+                // !false || !(false && true) -> true || !false -> true || true -> true
+                // (age > 8 && !isMarried) || isRich → ?
+                console.log((age > 8 && !isMarried) || isRich)
+                // (true && true) || true  -> true 
+                // !(age < 8 && !isMarried) || isRich → ?
+                console.log(!(age < 8 && !isMarried) || isRich)
+                // !(false && true) || true -> true 
+                // (age == 8 && isMarried) || !isRich → ?
+                console.log((age == 8 && isMarried) || !isRich)
+                // (false && false) || !true -> false || false -> false
+
+
+            3. 
+            // Ai làm và giải thích được cho 20000 😶🙄. Chọn giá trị a để biểu thức đúng 
+                // (a == 1 && a == 2 && a == 3) -> true 
+        // let a = {
+        //     i: 1,
+        //     toString: function () {
+        //         return i++
+        //     }
+        // }        
+
+        // console.log(a == 1 && a == 2 && a == 3)
+        console.log(0.1 + 0.2)
+
+            // BTVN: Nghĩ cách làm tròn số từ 66666 -> 67000
+    </script>
+  </body>
+</html>

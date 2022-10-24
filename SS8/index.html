@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="class-1 class-2"></div>
+
+    <script>
+      let a = document.querySelector(".class-1.class-2");
+      console.log(a);
+      // 1. Kiểm tra 1 số dương hay âm
+      //   let userInput = +prompt("Enter a number"); // Giá trị nhận vào từ prompt luôn là 1 string
+
+      //   if (userInput > 0) {
+      //     console.log(`${userInput} là số dương`);
+      //   } else if (userInput < 0) {
+      //     console.log(`${userInput} là số âm`);
+      //   } else if (userInput == 0) {
+      //     console.log(
+      //       `${userInput} không phải số nguyên âm cũng không phải số nguyên dương`
+      //     );
+      //   } else if (isNaN(userInput)) {
+      //     console.log("Nhập vào số đi pls");
+      //   } else {
+      //     console.log("Có gì đó sai sai");
+      //   }
+
+      // 2. Giải phương trình bậc 2: a*x^2 + b*x + c
+      // if(a == 0) {
+      //     console.log("")
+      // }
+      //   3.
+      //   a = 1, b = '2', c = 3, d = '4'
+
+      //   b + d = ? '24'
+      //   a + b + c + d = ? '1234'
+      //   a - b + c - d = ? -2
+      //   a - b - c + d = ? -44
+      //   (b + d) - (a + c) = ? '24' - 4 = 20
+      //   (a + b) - (c + d) = ?  -22
+      //   a * c + b * d = ? 11
+      //   -b + d = ?  '-24'
+      //   -b - d = ? -6
+      //   -(b + d) = ? -24
+
+      // let n = +prompt("Enter a number:");
+      //   // 1. In ra số chẵn/ lẻ < n
+      //   for (let i = 1; i < n; i += 2) {
+      //     console.log(i);
+      //   }
+      //   for (let i = 2; i < n; i += 2) {
+      //     console.log(i);
+      //   }
+
+      // 2. Tìm số chia hết cho 7 lớn nhất, nhỏ hơn n
+      //   for (let i = n - 1; i >= 7; i--) {
+      //     if (i % 7 == 0) {
+      //       console.log(i);
+      //       break;
+      //     }
+      //   }
+
+      // 3. Tính giai thừa của n
+      //   let factorial = 1;
+      //   for (let i = 2; i <= n; i++) {
+      //     factorial = factorial * i;
+      //   }
+
+      //   console.log(factorial);
+
+      // 4. Tính tổng các số từ 1 - n
+      //   let factorial = 1;
+      //   for (let i = 1; i <= n; i++) {
+      //     factorial = factorial + i;
+      //   }
+
+      //   console.log(factorial - 1);
+
+      // 5. Tìm các ước của n
+      //   for(let i = 1; i < n; i++) {
+      //     if(n % i == 0) {
+      //         console.log(i)
+      //     }
+      //   }
+
+      // 6. Kiểm tra n có phải số nguyên tô không (chỉ chia hết cho 1 và chính nó)
+      // let isPrime = true
+      // for (let i = 2; i < n; i++) {
+      //   if (n % i == 0) {
+      //     isPrime = false
+      //     break;
+      //   }
+      // }
+
+      // if(isPrime) {
+      //   console.log("Là số nguyên tố")
+      // }else {
+      //   console.log("Không phải só nguyên tố")
+      // }
+    </script>
+  </body>
+</html>

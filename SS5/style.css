@@ -1,0 +1,69 @@
+button:hover {
+    cursor: pointer;
+}
+
+.btn-1:hover {
+    background-color: red;
+}
+.btn-2:hover {
+    background-color: blue;
+}
+
+.parent {
+    width: 500px;
+    height:400px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: flex-end; */
+    flex-direction: column;
+   
+    /* align-items: flex-end;
+    padding-right: 24px; */
+}
+
+.parent .child:nth-child(1) {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+   
+}
+
+.parent .child:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+
+}
+
+.parent .child:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+/* stretch và baseline -> thường được sử dụng để căn chỉnh chiều cao (rộng) cho những thẻ chứa nội dung */
+
+
+
+.half-circle {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid orange;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    /* transform: rotate(-135deg); */
+}
+
+    /* width: 40px;
+  height: 40px;
+  border: 10px solid black;
+  border-radius: 50%;
+
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+
+  transform: rotate(-45deg); */
