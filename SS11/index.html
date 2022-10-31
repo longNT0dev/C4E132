@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN PAGE</title>
+  </head>
+  <body>
+    <form id="login-form">
+      <input type="text" name="username" /><br />
+      <span class="error-message" style="color: red"></span><br />
+      <input type="email" name="email" /><br />
+      <span class="error-message" style="color: red"></span><br />
+      <input type="password" name="password" /><br />
+      <span class="error-message" style="color: red"></span><br />
+      <button id="login-btn" type="submit">Login</button>
+    </form>
+
+
+    <script>
+      // DOM - Truy cập lấy ra các thẻ trong html
+      // Id, Class
+      // Cách lấy thẻ trong HTML thông qua DOM
+      let loginForm = document.getElementById("login-form");
+      let loginBtn = document.getElementById("login-btn");
+      let errorMessage = document.getElementsByClassName("error-message");
+
+      console.dir(loginForm)
+
+      loginBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // reset error
+        for (let i = 0; i < errorMessage.length; i++) {
+          errorMessage[i].innerText = "";
+        }
+        // GET VALUE FROM INPUT
+        let username = loginForm.username.value;
+        let email = loginForm.email.value;
+        let password = loginForm.password.value;
+
+        if (username.length < 8) {
+          // Hiện lỗi ra cho người dùng
+          errorMessage[0].innerText = "Tên tài khoản quá ngắn";
+          return;
+        }
+
+        if (email.length < 8) {
+          // Hiện lỗi ra cho người dùng
+          errorMessage[1].innerText = "Email quá ngắn";
+          return;
+        }
+
+        if (password.length < 8) {
+          // Hiện lỗi ra cho người dùng
+          errorMessage[2].innerText = "Mật khẩu quá ngắn";
+          return;
+        }
+
+        window.location.replace('dashboard.html')
+      });
+
+      // innerText, innerHTML, style
+    </script>
+  </body>
+</html>
