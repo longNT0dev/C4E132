@@ -8,11 +8,11 @@
   </head>
   <body>
     <form id="login-form">
-      <input type="text" name="username" /><br />
+      <input type="text" name="username"  placeholder="username"/><br />
       <span class="error-message" style="color: red"></span><br />
-      <input type="email" name="email" /><br />
+      <input type="email" name="email" placeholder="email"/><br />
       <span class="error-message" style="color: red"></span><br />
-      <input type="password" name="password" /><br />
+      <input type="password" name="password" placeholder="password"/><br />
       <span class="error-message" style="color: red"></span><br />
       <button id="login-btn" type="submit">Login</button>
     </form>
@@ -58,6 +58,7 @@
           return;
         }
 
+        localStorage.username = username;
         window.location.replace('dashboard.html')
       });
 

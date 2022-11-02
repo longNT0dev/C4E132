@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
-  </head>
-  <body>
-    <h1>Welcome to Dashboard</h1>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+      <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>    
+         <div class="box-table">
+               <div class="box-signup">
+                          <div style="width:30px;height:30px;border-radius: 50%;background-color: red;" id="show-username">LN</div>
+                          <button>Đăng Xuất</button>  
+               </div> 
+               <hr  width="100%" size="7px" align="center" color="black" />
+               <div class="add-table">
+                    <div class="find-tag">
+                       <span>
+                        <input type="search" placeholder="Search">
+                        <button onclick="createNewProduct()">Thêm SP</button>
+                    </span>
+                      
+                   </div>
+                  
+                   <div class="data-table">
+                     <div>
+                        <table  style="width:100% ;height:100%">
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên</th>
+                                <th> Giá</th>
+                                <th>Action</th>
+                            </tr>
+
+                            <tbody id="list-product">
+                              <tr>
+                                <td>1</td>
+                                <td>Long Nguyễn</td>
+                                <td>Vô giá</td>
+                                <td>
+                                    <button class="edit-btn">Edit</button>
+                                    <button class="delete-btn">Delete</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                          </table>
+                     </div>
+                   </div>
+               </div>
+         </div>   
+
+         <script src="dashboard.js"></script>
 </html>
