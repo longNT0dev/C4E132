@@ -2,32 +2,42 @@
 let userShow = document.getElementById("show-username");
 userShow.innerText = localStorage.username;
 let listProduct = document.getElementById("list-product");
+const BASE_URL = "https://6367c73fedc85dbc84db832b.mockapi.io/products";
 
-let productList;
+// HTTP/HTTPS Method: GET, POST, PUT, DELETE
 
-if (!localStorage.productList) {
-  // Nếu như chưa có thì khởi tạo = []
-  localStorage.productList = JSON.stringify([]);
-  productList = [];
-} else {
-  productList = JSON.parse(localStorage.productList);
-}
+// GET
+fetch(BASE_URL)
+  .then((response) => response.json())
+  .then((productList) => {
+    showListProduct(productList);
+  });
 
-showListProduct(productList);
+// GET BY ID
+// console.log(BASE_URL + "/2");
+// fetch(BASE_URL + "/2")
+//   .then((response) => response.json())
+//   .then((productList) => {
+//     console.log(productList);
+//     showListProduct(productList);
+//   });
 
-// // Định nghĩa hàm
+// // // Định nghĩa hàm
+
+// POST
 function createNewProduct() {
   let newProduct = {
-    id: 1,
     name: "new product",
     price: 20000,
   };
-  // Thay đổi biến productList
-  productList.push(newProduct);
-  // Gán lại giá trị thay đổi vào localStorage
-  localStorage.productList = JSON.stringify(productList);
-
-  showListProduct(productList);
+  fetch(BASE_URL, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newProduct),
+  });
 }
 
 function showListProduct(productList) {
@@ -45,43 +55,20 @@ function showListProduct(productList) {
           </tr>
           `;
   }
-}
 
-// Classname luôn trả về 1 mảng
-let editBtn = document.getElementsByClassName("edit-btn");
-console.log(editBtn);
+  let editBtn = document.getElementsByClassName("edit-btn");
+  for (let i = 0; i < editBtn.length; i++) {
+    editBtn[i].addEventListener("click", (event) => {
+      let currentNode = event.target.parentNode.parentNode.children;
+      let currentEditableValue = currentNode[1].getAttribute("contenteditable");
 
-for (let i = 0; i < editBtn.length; i++) {
-  editBtn[i].addEventListener("click", (event) => {
-    if(event.target.parentNode.parentNode.children[1].getAttribute('contenteditable')) {
-        event.target.parentNode.parentNode.children[1].setAttribute(
-            "contenteditable",
-            "false"
-          );
-          event.target.parentNode.parentNode.children[2].setAttribute(
-            "contenteditable",
-            "false"
-          );
-
-          console.log(event.target.parentNode.parentNode.children[1].innerText)
-          console.log(event.target.parentNode.parentNode.children[2].innerText)
-
-          console.log("Trước khi thay đổi",productList[i])
-          productList[i].name = event.target.parentNode.parentNode.children[1].innerText
-          productList[i].price = event.target.parentNode.parentNode.children[2].innerText
-          console.log("Sau khi thay đổi",productList[i])
-
-          localStorage.productList = JSON.stringify(productList)
-
-    } else {
-        event.target.parentNode.parentNode.children[1].setAttribute(
-            "contenteditable",
-            "true"
-          );
-          event.target.parentNode.parentNode.children[2].setAttribute(
-            "contenteditable",
-            "true"
-          );
-    }
-  });
+      if (currentEditableValue) {
+        currentNode[1].removeAttribute("contenteditable");
+        currentNode[2].removeAttribute("contenteditable");
+      } else {
+        currentNode[1].setAttribute("contenteditable", true);
+        currentNode[2].setAttribute("contenteditable", true);
+      }
+    });
+  }
 }
