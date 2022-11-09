@@ -65,10 +65,38 @@ function showListProduct(productList) {
       if (currentEditableValue) {
         currentNode[1].removeAttribute("contenteditable");
         currentNode[2].removeAttribute("contenteditable");
+
+        // Cập nhật dữ liệu lại - PUT
+        console.log(currentNode[1].value);
+        console.log(currentNode[2].value);
+        let updatedProduct = {
+          name: currentNode[1].innerText,
+          price: currentNode[2].innerText,
+        };
+        fetch(BASE_URL + `/${i + 1}`, {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedProduct),
+        });
       } else {
         currentNode[1].setAttribute("contenteditable", true);
         currentNode[2].setAttribute("contenteditable", true);
       }
+    });
+  }
+
+  let deleteBtn = document.getElementsByClassName("delete-btn");
+  for (let i = 0; i < deleteBtn.length; i++) {
+    deleteBtn[i].addEventListener("click", (event) => {
+      let currentNodeId =
+        event.target.parentNode.parentNode.children[0].innerText;
+
+      fetch(BASE_URL + `/${currentNodeId}`, {
+        method: "DELETE",
+      }).then(() => window.location.reload());
     });
   }
 }
