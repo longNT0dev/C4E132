@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Document</title>
+    <style>
+      .box {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      // Ví dụ đây là 1 bản CV mọi người tạo trong html 
+      let str = `<div class="box">hello friend</div>`;
+       // Mọi người cần chạy lệnh sau đó copy và lưu nó vào trong db
+      console.log(JSON.stringify(str))
+     
+ 
+      let container = document.getElementById("container");
+
+      // Đây là code đẩy dữ liệu lên (Khi 1 user tạo cv của bản thân họ, họ sẽ 
+      // thay đổi nội dung bên trong, mn cần chuyển lại và lưu lên mockapi 
+      // !!! Chú ý không thay đổi CV mẫu của mn mà cần tạo 1 cái mới tương 
+      // ứng cho người dùng)
+      // fetch("https://6367c73fedc85dbc84db832b.mockapi.io/products", {
+      //   method: "POST",
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     htmlContent: str
+      //   }),
+      // });
+
+      // Code lấy về hiển thị (mn cũng cần tự thay đổi cho phù hợp chút nữa)
+      fetch("https://6367c73fedc85dbc84db832b.mockapi.io/products/14")
+        .then((response) => response.json())
+        .then((result) => {
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(result.htmlContent, "text/html");
+            container.innerHTML = doc.body.innerHTML;
+        });
+    </script>
+  </body>
+</html>
