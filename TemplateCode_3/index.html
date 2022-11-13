@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="upload" type="file" />
+
+    <script>
+      let fileUpload = document.getElementById("upload");
+      const reader = new FileReader();
+
+      fileUpload.addEventListener("change", (e) => {
+        const { files } = event.target;
+
+        // Encode the file using the FileReader API
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          // Use a regex to remove data url part
+          const base64String = reader.result
+            .replace("data:", "")
+            .replace(/^.+,/, "");
+
+          console.log(base64String);
+
+          fetch("https://6367c73fedc85dbc84db832b.mockapi.io/user", {
+            method: "POST",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ avatar: base64String }),
+          });
+          // Logs wL2dvYWwgbW9yZ...
+        };
+        reader.readAsDataURL(files[0]);
+      });
+    </script>
+  </body>
+</html>
